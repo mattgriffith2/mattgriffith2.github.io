@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Prof A's Demo Page</title>
+    <link rel="stylesheet" type="text/css" href="./style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="wrapper">
+        <div class="header">Prof A's Demo Page</div>
+        <button class="button" onclick="clickMe()">
+          Click me to make a change
+        </button>
+        <div class="content">
+          <p>
+            yo
+        
+            
+        
+          </p>
+        </div>
+        <div class="footer"></div>
+      </div>
+    </div>
+    <script>
+      function clickMe() {
+        const content = document.querySelector(".header");
+        content.innerHTML = "Matt Griffiths' Lab 4";
+        const content_html = document.queryselector(".header");
+        while (content_html.firstchild) {
+            content_html.removechild(content_html.firstchild);
+        }
+        const p1 = document.createElement("p");
+        p1.setAttribute("class", "char-length");
+        p1.textContent = "my name has 12 characters";
+        const p2 = document.createElement("p");
+        p2.setAttribute("class", "3rd-char");
+        var first = "Matt"
+        var last = "Griffith";
+        var letter = first.charAt(2).toUpperCase();
+        var last3 = last.substring(5,8);
+        p2.innerHTML = letter.concat("<br>",last3);
+        var first1 = "Matt";
+        var last2 = "Griffith";
+        createElement = (first1.length + last2.length);
+
+
+        content_html.appendChild(p1);
+        content_html.appendChild(p2);
+
+       
+
+    }
+    </script>
+  </body>
+</html>

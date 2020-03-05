@@ -1,0 +1,94 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+ 
+
+body{
+    background-color: royalblue;
+    max-width: 90%;
+
+ }
+
+ h1{
+     font-family: fantasy;
+     text-align: center;
+     outline: 5px black;
+
+ }
+
+ p {
+     font-family: fantasy;
+     font-weight: bold;
+     font-style: italic;
+ }
+
+ .container {
+     outline: double black;
+     display: flex;
+     flex-direction: row;
+     justify-content: space-between;
+     padding: 5px;
+     background: red;
+ }
+
+ .header{
+     display:flex;
+     flex-wrap:wrap;
+     outline: 5px double black;
+     flex-direction:row;
+     max-width:100%;
+     background-color:#FF4B00;
+     color:white;
+     align-content:space-between;
+     padding:50px;
+     margin-bottom: 15px;
+ }
+
+img {
+    max-width: 8%;
+
+}
+
+.picture img{
+    max-width: 200px;
+    border-style: solid;
+    border-radius: 4px;
+}
+
+.wrapper {
+    display:flex;
+    margin-left: auto;
+    margin-right: auto;
+    justify-content:center;
+    max-width: 60%;
+}
+
+.content {
+    max-width:960px;
+    align-content: center;
+    display: flex;
+
+}
+
+.picture p {
+    background: #FDFFA3;
+    max-width: 200px;
+
+}
+
+.Work {
+    background: #FDFFA3;
+    outline: double black;
+
+}
+
+ol {
+    padding: 20px;
+
+}
+
+ul {
+    background: white;
+    padding: 20px;
+}
