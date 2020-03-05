@@ -25,9 +25,9 @@
     </div>
     <script>
       function clickMe() {
-        const content = document.querySelector(".header");
-        content.innerHTML = "Matt Griffiths' Lab 4";
-        const content_html = document.queryselector(".header");
+        const header = document.querySelector(".header");
+        header.textContent = "Matt Griffiths' Lab 4";
+        const content_html = document.queryselector(".content");
         while (content_html.firstchild) {
             content_html.removechild(content_html.firstchild);
         }
