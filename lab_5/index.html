@@ -2,32 +2,19 @@
 <html lang="en">
 
 <head>
-  <title>Test JSON page</title>
-  <link rel="stylesheet" type="text/css" href="./lab_styles.css">
+  <title>MattGriffithListofCountries</title>
+  <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
   <div class="container">
     <div class="wrapper">
-      <div class="header">Test JSON page</div>
+      <div class="header">MattGriffithsListofCountries</div>
       <!-- <button class="button" onclick="loadData()">Load Some JSON</button> -->
-      <button class="button" onclick="console.log('You haven\'t written a function yet!');">Click me to replace list
+      <button class="activate" onclick="replacecontent();">Click me to replace list
         entries</button>
       <div class="content">
-        <ul class="instructions">
-          <li>At the click of the button above</li>
-          <li>Replace this list</li>
-          <li>With an ordered list</li>
-          <li>Of fifty randomly-selected countries</li>
-          <li>Every time you click the above button</li>
-          <li>The list of countries should change</li>
-          <ol>
-            <li>Use your Developer tools to experiment with possible answers</li>
-            <li>When you have an idea of the correct code</li>
-            <li>Write it into your copy of the Lab HTML</li>
-            <li>And save it for submission</li>
-          </ol>
-        </ul>
+
       </div>
       <div class="footer"></div>
     </div>
@@ -278,24 +265,50 @@
       { "name": "Yemen", "code": "YE" },
       { "name": "Zambia", "code": "ZM" },
       { "name": "Zimbabwe", "code": "ZW" }
-    ]
+  ]  
+
     console.log("List of countries in the world", countries);
-    var li_items = document.getElementById('all_list');
-    const nations = sessionStorage.setItem("names", JSON.stringify(countries));
-    function name_output(){
-        var nations = JSON.parse(sessionStorage.getItem("names"));
-        li_items.innerHTML = '';
-        var ol_items = document.createElement('ol');
-        li_items.appendChild(ol_items);
-        for (i=0; i < 50; i += 1) {
-            var x = Math.floor(Math.random() * nations.length);
-            var li_ = document.createElement('li');
-            var li_txt = document.createTextNode(nations[x].name);
-            li.appendChild(li_txt);
-            ol_items.appendChild(li_txt);
-            nations.splice(x,1);
+    
+    function name_output(nations_name,element_type,class_Name,li_items){
+        var nations = document.queryselector(nations_name);
+        var ol_items = document.createElement(element_type);
+        nations.appendChild(ol_items);
+        items.setattribute(class_name,li_items)
+    }
+
+    function Random_Country(arr) {
+        const list = [];
+        for (var i=0; i < 50; i += 1) {
+            var x = arr[Math.floor(Math.random() * nations.length)];
+            list.push(x);
+        }
+        return list;
+    }
+
+    function Replacement() {
+        name_output(".content", "ol", "countries", "class");
+        var different_countries = getRandom(countries);
+        console.log(different_countries);
+        for (var i = 0; i < different_countries.length; i++) {
+            console.log(different_countries[i].name);
+            const nations = document.queryselector(".countries");
+            const items = document.createElement("li");
+            var string = different_countries[i].name.concat(" ");
+            var node = document.createTextNode(string);
+
+            items.appendChild(node);
+            nations.appendChild(items);
+            bold = document.createElement("strong");
+            var cnt_code = document.createeTextNode(different_countries[i].code);
+            bold.appendChild(cnt_code);
+            items.appendChild(bold);
         }
     }
+         
+        
+         
+
+    
   </script>
 </body>
 
