@@ -51,7 +51,7 @@ body {
     margin: 20px 50px;
     padding: 0 20px;
     min-height: 75px;
-    background: lightblue;
+    background: rgb(255, 175, 54);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -100,4 +100,8 @@ body {
   .button:active {
     position: relative;
     top: 1px;
+  }
+
+  ul{
+    text-align: center;
   }

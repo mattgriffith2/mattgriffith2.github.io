@@ -2,25 +2,23 @@
 <html lang="en">
 
 <head>
-  <title>MattGriffithListofCountries</title>
+  <title>Test JSON Page</title>
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
   <div class="container">
     <div class="wrapper">
-      <div class="header">MattGriffithsListofCountries</div>
-      <!-- <button class="button" onclick="loadData()">Load Some JSON</button> -->
-      <button class="activate" onclick="replacecontent();">Click me to replace list
+      <div class="header">Matt Griffiths List of Countries</div>
+      <button class="activate" onclick="replace();">Click me to replace list
         entries</button>
       <div class="content">
-
+        <ul>Countries</ul>
       </div>
       <div class="footer"></div>
     </div>
   </div>
   <script>
-    /* N.B. - For your lab, use the variable "countries" now available on the window space */
     const countries = [
       { "name": "Afghanistan", "code": "AF" },
       { "name": "Åland Islands", "code": "AX" },
@@ -265,50 +263,76 @@
       { "name": "Yemen", "code": "YE" },
       { "name": "Zambia", "code": "ZM" },
       { "name": "Zimbabwe", "code": "ZW" }
-  ]  
+    ]  
 
-    console.log("List of countries in the world", countries);
+const sortedCountries = countries.sort((a, b) => {
+  return b.type - a.type;
+});
+
+console.log("List of Countries in the world", sortedCountries);
+
+
+function random(arr) {
+  const list = [];
+  for (i=0; i<25; i ++){
+    var random = arr[Math.floor(Math.random() * arr.length)];
+    list.push(random);
     
-    function name_output(nations_name,element_type,class_Name,li_items){
-        var nations = document.queryselector(nations_name);
-        var ol_items = document.createElement(element_type);
-        nations.appendChild(ol_items);
-        items.setattribute(class_name,li_items)
-    }
+  }
+  return list;
 
-    function Random_Country(arr) {
-        const list = [];
-        for (var i=0; i < 50; i += 1) {
-            var x = arr[Math.floor(Math.random() * nations.length)];
-            list.push(x);
-        }
-        return list;
-    }
 
-    function Replacement() {
-        name_output(".content", "ol", "countries", "class");
-        var different_countries = getRandom(countries);
-        console.log(different_countries);
-        for (var i = 0; i < different_countries.length; i++) {
-            console.log(different_countries[i].name);
-            const nations = document.queryselector(".countries");
-            const items = document.createElement("li");
-            var string = different_countries[i].name.concat(" ");
-            var node = document.createTextNode(string);
+}
 
-            items.appendChild(node);
-            nations.appendChild(items);
-            bold = document.createElement("strong");
-            var cnt_code = document.createeTextNode(different_countries[i].code);
-            bold.appendChild(cnt_code);
-            items.appendChild(bold);
-        }
-    }
-         
-        
-         
+function Elements(contentName,elemType, className, itemElem) {
+  const contTarget = document.querySelector(contentName);
+  const item = document.createElement(elemType);
+  item.setAttribute(itemElem, className);
+  contTarget.appendChild(item);
 
-    
+}
+
+var robo = sortedCountries.sort(function(a,z){
+  if(a.name > z.name) return 1;
+  if(a.name < z.name) return -1;
+  return 0;
+})
+  
+
+
+
+
+
+
+
+
+function replace() {
+  Elements(".content", "ol", "countries", "class");
+  var country_list = random(sortedCountries);
+  console.log(country_list);
+  for(var i = 0; i < country_list.length; i++) {
+    console.log(country_list[i].name);
+    const contTarget = document.querySelector(".countries");
+    const item = document.createElement("Li");
+    var country_string = country_list[i].name.concat(" ");
+    var textnode = document.createTextNode(country_string);
+    country_list.sort();
+
+
+    item.appendChild(textnode);
+    contTarget.appendChild(item);
+    bold = document.createElement("strong");
+    var country_code = document.createTextNode(country_list[i].code);
+    bold.appendChild(country_code);
+    item.appendChild(bold); 
+
+  }
+}
+
+
+
+
+
   </script>
 </body>
 
