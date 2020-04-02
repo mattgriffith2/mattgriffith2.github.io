@@ -14,6 +14,7 @@ h2 {
     width: 640px;
     margin: 0 auto;
     background-color: rgb(247, 117, 66);
+    padding: 20px;
   }
   
   .full-img {
@@ -48,4 +49,5 @@ h2 {
     width: 20%;
     float: left;
     cursor: pointer;
+    padding: 20px;
   }
