@@ -6,32 +6,64 @@
     <title>Image gallery</title>
 
     <link rel="stylesheet" href="style.css">
-
+    
   </head>
 
   <body>
-    <h1>Matt Griffith</h1>
+    <h1>Costa Borsas and Matt Griffith</h1>
     <h2>Image Gallery</h2>
-    <p> 
-      <div style= "width: 640px; height: 480px;">
-        <img src="pic1.jpg" style="width: inherit"/>
-
-      </div>
-      
-      
-      
-    </p>
 
     <div class="full-img">
-      <img class="displayed-img" src="images/pic1.jpg">
+      <img class="displayed-img" src="pic1.jpg"
+      style="width:640px;height:480px;"> 
       <div class="overlay"></div>
       <button class="dark">Darken</button>
     </div>
 
     <div class="thumb-bar">
-
+      <img src="pic1.jpg">
+      <img src="Images/pic2.jpg">
+      <img src="Images/pic3.jpg">
+      <img src="Images/pic4.jpg">
+      <img src="Images/pic5.jpg">
 
     </div>
-    <script src="main.js"></script>
+    <script src="main.js">
+
+      const displayedImage = document.querySelector('.displayed-img');
+      const thumbBar = document.querySelector('.thumb-bar');
+      const btn = document.querySelector('button');
+      const overlay = document.querySelector('.overlay');
+
+      /* Image loop */
+
+      for(let i = 1; i <= 5; i++) {
+      const nextImage = document.createElement('img');
+      nextImage.setAttribute('src', 'pic' + i + '.jpg');
+      thumbBar.appendChild(nextImage);
+      nextImage.onclick = function(e) {
+        displayedImage.src = e.target.src;
+      }
+    }
+
+      /* Darken button, from MDN source*/
+
+      btn.onclick = function() {
+        const btnClass = btn.getAttribute('class');
+        if(btnClass === 'dark') {
+          btn.setAttribute('class','light');
+          btn.textContent = 'Lighten';
+          overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
+      } 
+        else {
+        btn.setAttribute('class','dark');
+        btn.textContent = 'Darken';
+        overlay.style.backgroundColor = 'rgba(0,0,0,0)';
+        }
+      }
+
+    
+
+    </script>
   </body>
 </html>
