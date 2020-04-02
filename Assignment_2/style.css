@@ -7,6 +7,7 @@ h1 {
   body {
     width: 640px;
     margin: 0 auto;
+    color: firebrick;
   }
   
   .full-img {
