@@ -28,6 +28,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     font-family: Helvetica, Geneva, Tahoma, sans-serif;
+    height: 180px;
   }
   
   .wrapper {
