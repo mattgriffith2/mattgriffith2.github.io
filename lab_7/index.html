@@ -55,7 +55,26 @@
         radius: 500
     }).addTo(mymap);
 
-    
+    marker.bindPopup("<b>Hello world!</b><br>I am a popup.").openPopup();
+    circle.bindPopup("I am a circle.");
+    polygon.bindPopup("I am a polygon.");
+
+    function onMapClick(e) {
+    alert("You clicked the map at " + e.latlng);
+    }
+
+    mymap.on('click', onMapClick);
+
+    var popup = L.popup();
+
+    function onMapClick(e) {
+        popup
+            .setLatLng(e.latlng)
+            .setContent("You clicked the map at " + e.latlng.toString())
+            .openOn(mymap);
+    }
+
+    mymap.on('click', onMapClick);
         /* Your lab code can go here, or in an external file you include */
     </script>
   </body>
