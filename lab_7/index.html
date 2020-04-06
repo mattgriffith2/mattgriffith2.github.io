@@ -34,7 +34,7 @@
     </div>
     <script>
 
-    var mymap = L.map('mapid').setView([38.9, 76.9], 7);
+    var mymap = L.map('mapid').setView([38.9, -76.9], 7);
     L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1IjoibWF0dGdyaWZmaXRoMiIsImEiOiJjazhucXcxcWQwd2g1M2xvNGNxemduczFhIn0.lBF_Y03FrEsLgQGgHeWvcQ', {
         attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
         maxZoom: 18,
@@ -44,9 +44,9 @@
         accessToken: 'pk.eyJ1IjoibWF0dGdyaWZmaXRoMiIsImEiOiJjazhucXcxcWQwd2g1M2xvNGNxemduczFhIn0.lBF_Y03FrEsLgQGgHeWvcQ'
     }).addTo(mymap);
 
-    var marker = L.marker([76.9, 38.9]).addTo(mymap);
+    var marker = L.marker([38.9, -76,9]).addTo(mymap);
 
-    var circle = L.circle([76.9,38.9], {
+    var circle = L.circle([38.9, -76.9], {
         color: 'red',
         fillColor: '#f03',
         fillOpacity: 0.5,
