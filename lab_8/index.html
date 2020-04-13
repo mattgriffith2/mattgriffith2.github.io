@@ -41,7 +41,7 @@
       .then((data) => { 
           // this is an explicit return. If I want my information to go further, I'll need to use the "return" keyword before the brackets close
           console.log('new data', data);
-          const reformattedData = Object.entries(data).map((m, 1) => {
+          const reformattedData = Object.entries(data).map((m, i) => {
               console.log(m);
               return {
                   y: m[1].length,
