@@ -18,7 +18,7 @@
     <script>
       fetch(' https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json') // replace this with the food safety data set
       .then((response) => response.json())
-      .then((data)) => {
+      .then((data) => {
           console.log(data);
           const clearEmptyData = data.filter((f) => f.geocoded_column_1);
           const refined = clearEmptyData.map((m) => ({
@@ -91,7 +91,7 @@
                     })
         
 
-                    
+
     </script>
   </body>
 </html>
