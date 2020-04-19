@@ -10,13 +10,13 @@
       <div class="wrapper">
         <div class="header">Frontend Libraries: Charts Lab</div>
         <div class="content">
-          When your lab is done, this should be replaced with a useful chart full of food data.
+            <div id="chartContainer"></div>
         </div>
         <div class="footer">Let's eat out in the future!</div>
       </div>
     </div>
     <script>
-      fetch(' https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json') // replace this with the food safety data set
+      fetch(' https://data.princegeorgescountymd.gov/resource/umjn-t2iz.json') 
       .then((response) => response.json())
       .then((data) => {
           console.log(data);
@@ -53,18 +53,47 @@
         })
         .then((results) => {
             console.log(results);
-            
-
-           
-    
-
         
-			       
+        var chart = new CanvasJS.Chart("chartContainer", {
+            animationEnabled: true,
+            exportEnabled: true,
+            theme: "light1", // "light1", "light2", "dark1", "dark2"
+            title:{
+                text: "Simple Column Chart with Index Labels"
+            },
+        data: [{
+            type: "bar",
+            name: "companies",
+            axisYType: "secondary",
+            color: "#014D65",
+            dataPoints: [
 
-    
-        
-    </script>
-  </body>
+                { y: 3, label: "Sweden" },
+                { y: 7, label: "Taiwan" },
+                { y: 5, label: "Russia" },
+                { y: 9, label: "Spain" },
+                { y: 7, label: "Brazil" },
+                { y: 7, label: "India" },
+                { y: 9, label: "Italy" },
+                { y: 8, label: "Australia" },
+                { y: 11, label: "Canada" },
+                { y: 15, label: "South Korea" },
+                { y: 12, label: "Netherlands" },
+                { y: 15, label: "Switzerland" },
+                { y: 25, label: "Britain" },
+                { y: 28, label: "Germany" },
+                { y: 29, label: "France" },
+                { y: 52, label: "Japan" },
+                { y: 103, label: "China" },
+                { y: 134, label: "US" }
+            ]
+        }]
+    });
+    chart.render();
+
+    }
+        )
+  
+        </script>
+    </body>
 </html>
-
-
