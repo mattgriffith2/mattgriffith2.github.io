@@ -4,7 +4,7 @@ var exphbs = require('express-handlebars;')
 var bodyParser = require('body-parser');
 
 //Load and initialize MessageBird SDK
-var messagebird = require('messagebird')('');
+var messagebird = require('messagebird')('m16LxvyAvZFgTydNYL4kiLF32');
 
 // set up and configure the express framework
 var app = express();
@@ -23,6 +23,7 @@ app.post('/step2', function(req, res) {
 
     //Make request to verify api
     messagebird.verify.create(number, {
+        originator : 'Code',
         template: "Your Verification Code is %token"
     }, function(err, response) {
         if (err) {
